@@ -24,16 +24,30 @@ import org.springframework.web.servlet.mvc.AbstractController;
 //<bean name="/welcome.html" class="com.pl.hellocontroller.HelloController"/>
 //<bean id="HandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 	
-	@Controller
-	public class HelloController {
+@Controller
+@RequestMapping("/greet")
+public class HelloController {
 		
-		@RequestMapping("/welcome")
-		public ModelAndView helloWorld() {
-			ModelAndView model = new ModelAndView("HelloPage");
-			model.addObject("msg","Hello world, welcome to the first Spring MVC Application");
+	@RequestMapping("/welcome")
+	public ModelAndView helloWorld() {
+		ModelAndView model = new ModelAndView("HelloPage");
+		model.addObject("msg","Hello world, welcome to the first Spring MVC Application");
 			
-			return model;
-		}
+		return model;
+	}
 	
-
+	@RequestMapping("/hi")
+	public ModelAndView hiWorld() {
+		ModelAndView model = new ModelAndView("HelloPage");
+		model.addObject("msg","Hi world, welcome to the first Spring MVC Application");
+			
+		return model;
+	}
+	
+	
+	
 }
+
+
+
+
